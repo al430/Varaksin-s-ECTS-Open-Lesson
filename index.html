@@ -1,10 +1,9 @@
-```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Открытый урок Е.Н. Вараксиной</title>
+    <title>Фотография</title>
     <style>
         * {
             margin: 0;
@@ -60,6 +59,7 @@
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
         }
         
+        /* Адаптив для мобильных устройств */
         @media (max-width: 768px) {
             .photo-container {
                 padding: 20px;
@@ -75,7 +75,8 @@
             }
         }
         
-        @media (max-width: 480px) {
+        /* Адаптив для телефонов в портретной ориентации */
+        @media (max-width: 480px) and (orientation: portrait) {
             .container {
                 width: 95%;
                 padding: 10px;
@@ -90,6 +91,36 @@
                 transform: translateY(-3px);
             }
         }
+        
+        /* Адаптив для телефонов в горизонтальной (альбомной) ориентации */
+        @media (max-width: 480px) and (orientation: landscape) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                width: 100%;
+                max-width: none;
+                padding: 0;
+            }
+            
+            .photo-container {
+                padding: 12px;
+                border-radius: 10px;
+                margin: 0;
+            }
+            
+            .photo {
+                border-radius: 6px;
+                height: 80vh; /* Занимает 80% высоты экрана */
+                width: auto;
+                object-fit: contain;
+            }
+            
+            .photo-container:hover {
+                transform: translateY(-2px);
+            }
+        }
     </style>
 </head>
 <body>
@@ -100,4 +131,3 @@
     </div>
 </body>
 </html>
-```
